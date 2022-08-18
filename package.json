@@ -1,0 +1,26 @@
+{
+  "name": "bookingapp",
+  "version": "1.0.0",
+  "description": "This is a booking web app created with the mern stack",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kofi-eo/BookingApp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kofi-eo/BookingApp/issues"
+  },
+  "homepage": "https://github.com/Kofi-eo/BookingApp#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19"
+  }
+}
