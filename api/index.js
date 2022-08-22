@@ -8,6 +8,8 @@ import User from "./routes/users.js";
 
 const app = express();
 
+app.use(express.json());
+
 dotenv.config();
 
 const connect = async () => {
@@ -36,6 +38,10 @@ app.use("/api/auth", Auth);
 app.use("/api/hotels", Hotel);
 app.use("/api/rooms", Room);
 app.use("/api/users", User);
+
+app.use((err, req, res, next) => {
+  return res.status(500).json("Hello error from handler!");
+});
 
 app.listen(8000, () => {
   connect();
