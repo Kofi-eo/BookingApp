@@ -1,3 +1,5 @@
+import Hotel from "../models/hotels.js";
+
 export const createHotel = async (req, res, next) => {
   router.post("/", async (req, res) => {
     const newHotel = new Hotel(req.body);
@@ -51,12 +53,12 @@ export const getHotel = async (req, res, next) => {
 };
 
 export const getAllHotel = async (req, res, next) => {
-  router.post("/", async (req, res) => {
-    const newHotel = new Hotel(req.body);
-
+  router.get("/", async (req, res) => {
+    const failed = true;
+    if (failed) return next(createError(401, "You are not Authenticated"));
     try {
-      const savedHotel = await newHotel.save();
-      res.status(200).json(savedHotel);
+      const hotels = await Hotel.find();
+      res.status(200).json(hotels);
     } catch (err) {
       next(err);
     }
