@@ -1,4 +1,6 @@
 import Hotel from "../models/hotels.js";
+import express from "express";
+const router = express.Router();
 
 export const createHotel = async (req, res, next) => {
   router.post("/", async (req, res) => {
