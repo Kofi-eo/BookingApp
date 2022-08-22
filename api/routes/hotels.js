@@ -4,6 +4,7 @@ import {
   updateHotel,
   deleteHotel,
   getHotel,
+  getAllHotel,
 } from "../controllers/hotels.js";
 import Hotel from "../models/hotels.js";
 import { createError } from "../utils/error.js";
@@ -23,15 +24,6 @@ router.delete("/:id", deleteHotel);
 router.get("/:id", getHotel);
 
 //GET ALL
-router.get("/", async (req, res) => {
-  const failed = true;
-  if (failed) return next(createError(401, "You are not Authenticated"));
-  try {
-    const hotels = await Hotel.find();
-    res.status(200).json(hotels);
-  } catch (err) {
-    next(err);
-  }
-});
+router.get("/", getAllHotel);
 
 export default router;
