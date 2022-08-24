@@ -5,10 +5,12 @@ import Auth from "./routes/auth.js";
 import Hotel from "./routes/hotels.js";
 import Room from "./routes/rooms.js";
 import User from "./routes/users.js";
+import cookieParser from "cookie-parser";
 
 const app = express();
 
 app.use(express.json());
+app.use(cookieParser());
 
 dotenv.config();
 
